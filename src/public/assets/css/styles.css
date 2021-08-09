@@ -1,0 +1,50 @@
+.container_images{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  flex-direction: column-reverse;
+  gap: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 75vh;
+}
+
+.container_images::-webkit-scrollbar {
+  display: none;
+}
+
+.images_list{
+  transition: 100ms;
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 80%;
+  height: 60vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 50vh;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 500px;
+}

@@ -1,0 +1,22 @@
+
+<!-- Swiper -->
+<div class="swiper-container mySwiper">
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {{#each photos ~}}
+        <!--Primero itero cada objeto-->
+        <!--Luego itero cada propiedad-->
+        {{#each this}}
+        {{~#if imageURL}}
+        <div class="swiper-slide">
+            <img src="{{imageURL}}" alt="">
+        </div>
+
+        {{~/if~}}
+
+        {{/each}}
+
+        {{~/each}}
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

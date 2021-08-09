@@ -1,26 +1,51 @@
 <div class="row">
     <div class="col-md-5">
+        <h2>Upload a </h2>
         <div class="card">
             <div class="card-body">
-                <form action="">
+                <form id="formAddImage">
                     <div class="form-group pb-3">
-                        <input type="text" class="form-control" placeholder="Image Title">
+                        <input type="text" name="title" class="form-control" placeholder="Image Title" required>
                     </div>
 
                     <div class="form-group">
-                        <textarea name="description" class="form-control" placeholder="Image Description"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Image Description" required></textarea>
                     </div>
 
                     <div class="form-group">
 
                         <label for="formFile" class="form-label mt-4">Choose an Image</label>
-                        <input class="form-control" name="image" type="file" id="formFile">
+                        <input class="form-control" name="image" type="file" id="formFile" required>
 
                     </div>
 
-                    <button class="btn btn-success w-100 mt-3">Upload Image</button>
+                    <button class="btn btn-success w-100 mt-3" id="btnAddImage">
+                        <div class="spinner-border text-light spinner-border-sm d-none" role="status" id="loadingAddImage">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        Upload Image
+                    </button>
                 </form>
             </div>
         </div>
     </div>
+
+    <div class="col-md-7">
+        <div class="container_images">
+            {{#each photos}}
+                {{#each this}}
+
+                    {{#if imageURL}}
+                        <div class="">
+                            <span><b>{{title}}</b></span>
+                            <img class="images_list" src="{{imageURL}}" alt="">
+                        </div>
+                    {{/if}}
+
+                {{/each}}
+            {{/each}}
+        </div>
+    </div>
+
+
 </div>

@@ -7,7 +7,7 @@ import multer from "multer";
 import path from "path";
 //@ts-ignore
 import hbs from "express-handlebars";
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 import ImagesRoutes from "./routes/images.routes";
 
 const app = express();
@@ -32,24 +32,17 @@ app.use(json())
 app.use(urlencoded({ extended: false}))
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 const storage = multer.diskStorage({
 	destination: path.join(__dirname, 'public/uploads'),
 	filename: (req: Request, file: any, callback: Function) => {
-		callback(null, uuid() + path.extname(file.originalname))
+		callback(null, uuid() + path.extname(file.originalname));
 	}
 });
 
 app.use(multer({ storage }).single('image'));
 
 // routes
-app.use('/images', ImagesRoutes)
-
-app.get('/', (req: Request, res: Response) => {
-
-	res.render('images');
-});
-
-
-
+app.use('/', ImagesRoutes)
 
 export default app;

@@ -6,17 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery</title>
-
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
 
     {{> navigation }}
 
-    <div class="container p-4">
+    <div class="container pt-4 pb-4">
         {{{ body }}}
     </div>
+
+
+    <!--SCRIPTS-->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="/assets/js/scripts.js"></script>
 
 </body>
 

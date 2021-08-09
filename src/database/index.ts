@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import { MONGO_PASS, MONGO_DBNAME } from "../config";
+import { MONGO_URI } from "../config";
 
 const connection = async () => {
-    mongoose.connect(`mongodb+srv://admin:${MONGO_PASS}@yeisonbd.c7sxh.mongodb.net/${MONGO_DBNAME}?retryWrites=true&w=majority`,{
+    mongoose.connect(MONGO_URI,{
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
