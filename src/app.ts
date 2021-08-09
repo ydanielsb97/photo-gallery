@@ -15,7 +15,7 @@ const app = express();
 // config
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, '../views'))
 app.engine('.hbs', hbs({
 	defaultLayout: 'main',
 	layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -30,7 +30,7 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'));
 app.use(json())
 app.use(urlencoded({ extended: false}))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 const storage = multer.diskStorage({
