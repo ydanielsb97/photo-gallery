@@ -1,10 +1,13 @@
+
+.navbar{
+  background-color: #682bec;
+}
+
 .container_images{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   flex-direction: column-reverse;
   gap: 5px;
-  overflow-y: scroll;
-  overflow-x: hidden;
   height: 75vh;
 }
 
@@ -17,6 +20,8 @@
   cursor: pointer;
   max-width: 100%;
   height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -28,23 +33,61 @@ body {
   margin: 0;
   padding: 0;
 }
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
 .swiper-container {
-  width: 80%;
-  height: 60vh;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  width: 300px;
+  height: 70vh;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 500px;
-  height: 50vh;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#swiperContainer{
+  animation: startShow 3s;
+}
+
+.descriptionDiv{
+  background-color: rgba(0, 0, 0, 0.377);
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  animation: descriptionShow 4s;
+}
+
+@keyframes descriptionShow {
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 100%
+  }
+}
+
+@keyframes startShow {
+  
+  0%{
+    height: 0px;
+  }
+
+  100%{
+    height: 70vh;
+  }
 }

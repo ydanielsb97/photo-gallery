@@ -1,6 +1,6 @@
-
-<!-- Swiper -->
-<div class="swiper-container mySwiper">
+<!-- Slider main container -->
+<div class="swiper-container" id="swiperContainer">
+    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         {{#each photos ~}}
@@ -10,6 +10,11 @@
         {{~#if imageURL}}
         <div class="swiper-slide">
             <img src="{{imageURL}}" alt="">
+            <div class="descriptionDiv">
+                <span>
+                    {{description}}
+                </span>
+            </div>
         </div>
 
         {{~/if~}}
@@ -18,5 +23,8 @@
 
         {{~/each}}
     </div>
-    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
 </div>
